@@ -8,10 +8,83 @@
     <!--1.BS CSS-->
     <link type="text/css" rel="stylesheet" href="../CSS/bootstrap.min.css" />
     <!--1.1 CSS-->
+    <style>
+        #er1, #er2, #er3 {
+            color: red
+        }
+    </style>
     <!--2.jquery js-->
     <script type="text/javascript" src="../JS/jquery-3.5.1.min.js"></script>
     <!--3.BS js-->
     <script type="text/javascript" src="../JS/bootstrap.min.js"></script>
+    <script>
+
+        function checkHoten() {
+            var hoten = document.getElementById("txt_hoten").value;
+            var check_er1_name = document.getElementById("er1");
+            var regexTen = /^[A-Z][a-z]+(\s[A-Z][a-z]+)+$/;
+
+            if (hoten == "" || hoten == null) {
+                check_er1_name.innerHTML = "Ten khong duoc rong";
+            } else if (!regexTen.test(hoten)) {
+                check_er1_name.innerHTML = "Ho ten khong hop le";
+            } else {
+                check_er1_name.innerHTML = "";
+                return hoten;
+            }
+        }
+
+        function checkNgayden() {
+            var day = document.getElementById("txt_ngayden").value;//text
+            day = new Date(day);
+            var today = new Date();
+            if (day < today) {
+                document.getElementById("er2").innerHTML = "";
+                return true;
+            } else if (day == "" || day == null) {
+                document.getElementById("er2").innerHTML = "Ngay khong de rong";
+                return false;
+            }
+            else {
+                document.getElementById("er2").innerHTML = "Ngay den nho hon ngay hien tai";
+                return false;
+            }
+        }
+
+        function checkNgaydi() {
+            var ngaydi = document.getElementById("txt_ngaydi").value;//text
+            var ngayden = document.getElementById("txt_ngayden").value;
+            ngaydi = new Date(ngaydi);
+            ngayden = new Date(ngayden);
+            if (ngaydi > ngayden) {
+                document.getElementById("er3").innerHTML = "";
+                return true;
+            } else if (ngaydi == "" || ngaydi == null) {
+                document.getElementById("er3").innerHTML = "Ngay khong de rong";
+                return false;
+            }
+            else {
+                document.getElementById("er3").innerHTML = "Ngay di phai lon hon ngay den";
+                return false;
+            }
+        }
+
+        function checkSongay() {
+            var ns = document.getElementById("txtns").value;//text
+            ns = new Date(ns);
+            var crr = new Date();
+            var t = crr.getFullYear() - ns.getFullYear();
+            if (t >= 16) {
+                document.getElementById("er2").innerHTML = "";
+                return true;
+            }
+            else {
+                //sai
+                document.getElementById("er2").innerHTML = "Tuoi ko hop le";
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="content-fluid" style="border: 1px solid black;">

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--1.BS CSS-->
+    <link type="text/css" rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <!--1.1 CSS-->
+    <!--2.jquery js-->
+    <script type="text/javascript" src="../JS/jquery-3.5.1.min.js"></script>
+    <!--3.BS js-->
+    <script type="text/javascript" src="../JS/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="content-fluid" style="border: 1px solid black;">
+        <div class="row" style="border-bottom: 1px solid black;">
+            <div class="col-sm-12">
+                <h1>PanDanus Reort</h1>
+                <h2>Dat phong online</h2>
+            </div>
+        </div>
+        <div class="row" style="border-bottom: 1px solid black;">
+            <div class="col-sm-9" style="border: 1px solid black;">
+                <form class="form-group" id="frm">
+                    <label>Ho ten nguoi dat</label><br />
+                    <input type="text" placeholder="Hoang" id="txt_hoten" class="form-control" onblur="checkHoten();" />
+                    <span id="er1">(*)</span><br />
+                    <label>Ngay den</label>
+                    <input type="date" placeholder="07/01/2020" id="txt_ngayden" class="form-control" onblur="checkNgayden();" />
+                    <span id="er2">(*)</span><br />
+                    <label>Ngay di</label>
+                    <input type="date" placeholder="07/03/2020" id="txt_ngaydi" class="form-control" onblur="checkNgaydi();" />
+                    <span id="er3">(*)</span><br />
+                    <label>So ngay</label><br />
+                    <input type="text" placeholder="3" id="txt_songay" class="form-control" onblur="checkSongay();" />
+                    <label>Loai phong</label>
+                    <select class="form-control" id="txt_loaiPhong" onchange="clkLoaiphong()">
+                        <option value="1200000">Luxury</option>
+                        <option value="1500000">Superior</option>
+                        <option value="1900000">View Sea</option>
+                        <option value="1700000">Pool view</option>
+                    </select>
+                    <label>Gia phong</label>
+                    <input type="text" id="txt_gia" class="form-control" readonly /><br />
+                    <div class="form-group">
+                        <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            Dich vu
+                        </label>
+                        <input type="checkbox" class="checbox-inline" value="Giat" />Giat ui
+                        <input type="checkbox" class="checbox-inline" value="Xe" />Xe dua ruoc
+                        <input type="checkbox" class="checbox-inline" value="An" />An sang tai phong
+                    </div>
+                    <input type="button" onclick="Dangki" value="Dang ki" />
+                </form>
+            </div>
+            <div class="col-sm-3" style="border: 1px solid black;">
+                <img src="../Images/PIC.JPG" />
+            </div>
+        </div>
+        <div class="row" style="border-bottom: 1px solid black;">
+            <table class="table table-hover" id="txt_bang">
+                <tr>
+                    <td>Ho ten nguoi dat</td>
+                    <td>Ngay di </td>
+                    <td>Ngay den</td>
+                    <td>So ngay</td>
+                    <td>Loai phong</td>
+                    <td>Dich vu</td>
+                    <td>Tong chi phi</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
